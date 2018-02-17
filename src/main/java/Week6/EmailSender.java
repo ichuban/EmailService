@@ -4,11 +4,11 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
 
-public class EmailSender extends EmailConfiguration {
+public class EmailSender {
 
     public void sendEmail() {
         String userName = "rsuchodola@gmail.com";
-        String password = "";
+        String password = "djsuchy123";
 
         String fromAdress = "rsuchodola@gmail.com";
         String toAdress = "ichuban@gmail.com";
@@ -17,10 +17,10 @@ public class EmailSender extends EmailConfiguration {
 
         try {
             Email email = new SimpleEmail();
-            email.setHostName(HOST);
-            email.setSmtpPort(PORT);
+            email.setHostName(EmailConfiguration.HOST);
+            email.setSmtpPort(EmailConfiguration.PORT);
             email.setAuthenticator(new DefaultAuthenticator(userName, password));
-            email.setSSLOnConnect(SSL_FLAG);
+            email.setSSLOnConnect(EmailConfiguration.SSL_FLAG);
             email.setFrom(fromAdress);
             email.setSubject(subject);
             email.setMsg(message);
@@ -32,13 +32,5 @@ public class EmailSender extends EmailConfiguration {
         }
     }
 
-    public boolean startServer() {
 
-        return true;
-    }
-
-    public boolean stopServer() {
-
-        return true;
-    }
 }

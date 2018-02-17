@@ -1,10 +1,14 @@
 package Week6;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class main {
     public static void main(String[] args) {
 
-EmailSender sender = new EmailSender();
-sender.sendEmail();
+
+        LinkedList<List> fifo = new LinkedList<List>();
+
 
 
     }
