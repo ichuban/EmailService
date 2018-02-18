@@ -1,31 +1,19 @@
 package Week6;
 
-import java.util.logging.Logger;
-
 public class Server {
 
-    private boolean isRunning = false;
+    private boolean serverON = false;
 
-    private EmailSender service = new EmailSender();
-    public static final Logger log = Logger.getLogger(EmailSender.class.getName());
-
-    {
-        if (isRunning = true) {
-            service.sendEmail();
-        }
-       else {
-            log.warning("Serwer jest wyłączony!");
-        }
+    public boolean startServer() {
+        return serverON = true;
     }
 
-
-    public boolean isRunning() {
-        return isRunning;
+    public boolean stopServer() {
+        return serverON = false;
     }
 
-    public void setRunning(boolean running) {
-        isRunning = running;
+    public boolean isServerON() {
+        return serverON;
     }
-
 
 }
